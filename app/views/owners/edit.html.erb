@@ -33,7 +33,7 @@
           Accounts
         </label>
 
-        <input type="text" id="accounts_id" name="accounts_id" placeholder="Accounts" class="form-control" value="<%= @owner.accounts_id %>">
+        <%= select_tag(:accounts_id, options_from_collection_for_select(Account.all, :id, :created_at, @owner.accounts_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
