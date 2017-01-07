@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :accounts
+  # Routes for the Account resource:
+  # READ
+  get "/accounts", :controller => "accounts", :action => "index"
+  get "/accounts/:id", :controller => "accounts", :action => "show"
+
+
   # Routes for the Filter resource:
   # CREATE
   get "/filters/new", :controller => "filters", :action => "new"

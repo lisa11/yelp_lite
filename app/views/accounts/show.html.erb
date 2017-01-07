@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>Account #<%= @account.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Email</dt>
+      <dd><%= @account.email %></dd>
+
+      <dt>Password</dt>
+      <dd><%= @account.password %></dd>
+
+      <dt>First name</dt>
+      <dd><%= @account.first_name %></dd>
+
+      <dt>Last initial</dt>
+      <dd><%= @account.last_initial %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/accounts" class="btn btn-primary">
+        Back
+      </a>
+    </div>
+  </div>
+</div>
