@@ -1,6 +1,10 @@
 class Restaurant < ApplicationRecord
   # Direct associations
 
+  has_many   :owners,
+             :foreign_key => "restaurants_id",
+             :dependent => :destroy
+
   has_many   :filters,
              :foreign_key => "restaurants_id",
              :dependent => :destroy
