@@ -1,6 +1,10 @@
 class Account < ApplicationRecord
   # Direct associations
 
+  has_many   :owners,
+             :foreign_key => "accounts_id",
+             :dependent => :destroy
+
   has_many   :reviews,
              :dependent => :destroy
 
