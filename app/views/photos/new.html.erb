@@ -24,7 +24,7 @@
           Reviews
         </label>
 
-        <input type="text" id="reviews_id" name="reviews_id" placeholder="Reviews" class="form-control" value="<%= @photo.reviews_id %>">
+        <%= select_tag(:reviews_id, options_from_collection_for_select(Review.all, :id, :restaurants_id, @photo.reviews_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
