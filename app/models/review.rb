@@ -15,6 +15,10 @@ class Review < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :owners,
+             :through => :responses,
+             :source => :owners
+
   # Validations
 
 end

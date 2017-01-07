@@ -11,6 +11,10 @@ class Owner < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :reviews,
+             :through => :responses,
+             :source => :reviews
+
   # Validations
 
 end
