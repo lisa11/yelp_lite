@@ -1,6 +1,7 @@
 class OwnersController < ApplicationController
   def index
-    @owners = Owner.page(params[:page]).per(10)
+    @q = Owner.ransack(params[:q])
+    @owners = @q.result(:distinct => true).includes(:restaurants, :accounts, :responses, :reviews).page(params[:page]).per(10)
 
     render("owners/index.html.erb")
   end
