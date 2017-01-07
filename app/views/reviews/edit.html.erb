@@ -27,14 +27,8 @@
         <%= select_tag(:restaurants_id, options_from_collection_for_select(Restaurant.all, :id, :name, @review.restaurants_id), :class => "form-control") %>
       </div>
 
-      <!-- Label and input for account_id -->
-      <div class="form-group">
-        <label for="account_id" class="control-label">
-          Account
-        </label>
-
-        <%= select_tag(:account_id, options_from_collection_for_select(Account.all, :id, :created_at, @review.account_id), :class => "form-control") %>
-      </div>
+      
+      
 
       <!-- Label and input for stars -->
       <div class="form-group">
