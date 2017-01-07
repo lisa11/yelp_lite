@@ -16,8 +16,20 @@
 
       <% @filters.each do |filter| %>
       <tr>
-        <td><%= filter.restaurants.name %></td>
-        <td><%= filter.tag.created_at %></td>
+        <td>
+          <% if filter.restaurants.present? %>
+            <a href="/restaurants/<%= filter.restaurants.id %>">
+              <%= filter.restaurants.name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if filter.tag.present? %>
+            <a href="/tags/<%= filter.tag.id %>">
+              <%= filter.tag.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/filters/<%= filter.id %>" class="btn btn-primary">Show</a>
           <a href="/filters/<%= filter.id %>/edit" class="btn btn-warning">Edit</a>

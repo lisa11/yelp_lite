@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Reviews</dt>
-      <dd><%= @response.reviews_id %></dd>
+      <dd>
+        <% if @response.reviews.present? %>
+          <a href="/reviews/<%= @response.reviews_id %>">
+            <%= @response.reviews.restaurants_id %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Owners</dt>
-      <dd><%= @response.owners_id %></dd>
+      <dd>
+        <% if @response.owners.present? %>
+          <a href="/owners/<%= @response.owners_id %>">
+            <%= @response.owners.restaurants_id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

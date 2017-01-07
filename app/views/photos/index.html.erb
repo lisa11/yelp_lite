@@ -15,7 +15,13 @@
 
       <% @photos.each do |photo| %>
       <tr>
-        <td><%= photo.reviews.restaurants_id %></td>
+        <td>
+          <% if photo.reviews.present? %>
+            <a href="/reviews/<%= photo.reviews.id %>">
+              <%= photo.reviews.restaurants_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/photos/<%= photo.id %>" class="btn btn-primary">Show</a>
           <a href="/photos/<%= photo.id %>/edit" class="btn btn-warning">Edit</a>

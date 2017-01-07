@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Restaurants</dt>
-      <dd><%= @filter.restaurants_id %></dd>
+      <dd>
+        <% if @filter.restaurants.present? %>
+          <a href="/restaurants/<%= @filter.restaurants_id %>">
+            <%= @filter.restaurants.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Tag</dt>
-      <dd><%= @filter.tag_id %></dd>
+      <dd>
+        <% if @filter.tag.present? %>
+          <a href="/tags/<%= @filter.tag_id %>">
+            <%= @filter.tag.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

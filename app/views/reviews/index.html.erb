@@ -18,8 +18,20 @@
 
       <% @reviews.each do |review| %>
       <tr>
-        <td><%= review.restaurants.name %></td>
-        <td><%= review.account.created_at %></td>
+        <td>
+          <% if review.restaurants.present? %>
+            <a href="/restaurants/<%= review.restaurants.id %>">
+              <%= review.restaurants.name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if review.account.present? %>
+            <a href="/accounts/<%= review.account.id %>">
+              <%= review.account.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td><%= review.stars %></td>
         <td><%= review.content %></td>
         <td>
