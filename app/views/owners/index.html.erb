@@ -17,7 +17,7 @@
       <% @owners.each do |owner| %>
       <tr>
         <td><%= owner.restaurants.name %></td>
-        <td><%= owner.accounts_id %></td>
+        <td><%= owner.accounts.created_at %></td>
         <td>
           <a href="/owners/<%= owner.id %>" class="btn btn-primary">Show</a>
           <a href="/owners/<%= owner.id %>/edit" class="btn btn-warning">Edit</a>
