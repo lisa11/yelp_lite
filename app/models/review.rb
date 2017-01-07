@@ -1,6 +1,8 @@
 class Review < ApplicationRecord
   # Direct associations
 
+  belongs_to :account
+
   has_many   :responses,
              :foreign_key => "reviews_id",
              :dependent => :destroy
