@@ -16,7 +16,7 @@
 
       <% @filters.each do |filter| %>
       <tr>
-        <td><%= filter.restaurants_id %></td>
+        <td><%= filter.restaurants.name %></td>
         <td><%= filter.tag_id %></td>
         <td>
           <a href="/filters/<%= filter.id %>" class="btn btn-primary">Show</a>
